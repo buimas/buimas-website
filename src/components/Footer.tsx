@@ -3,7 +3,7 @@ import logo from "../assets/images/logo.png"
 
 import whatsappIcon from "../assets/images/whatsapp.png"
 import instagramIcon from "../assets/images/instagram.png"
-import linkedinIcon from "../assets/images/linkedin.svg"
+import linkedinIcon from "../assets/images/linkedin.png"
 import xIcon from "../assets/images/x.png"
 
 const socials = [
