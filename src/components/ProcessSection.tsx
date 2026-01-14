@@ -47,7 +47,7 @@ const ProcessSection = () => {
       className="
         relative w-full
         mt-10
-        py-32
+        py-12 md:py-32
         bg-white
       "
     >
@@ -63,7 +63,7 @@ const ProcessSection = () => {
         Our Process
       </h2>
 
-      <div className="relative px-6 md:px-10 lg:px-[100px]">
+      <div className="relative px-4 sm:px-6 md:px-10 lg:px-[100px]">
         {/* Vertical timeline line */}
         <div
           className="
@@ -80,7 +80,7 @@ const ProcessSection = () => {
         />
 
         {/* Steps */}
-        <div className="flex flex-col gap-24">
+        <div className="flex flex-col gap-16 md:gap-24">
           {steps.map((step) => (
             <div
               key={step.id}

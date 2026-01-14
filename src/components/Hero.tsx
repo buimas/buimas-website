@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const Hero = () => {
   return (
-    <section className="relative h-[75vh] sm:h-[85vh] lg:h-screen w-full overflow-hidden">
+    <section className="relative h-[75vh] sm:h-[75vh] lg:h-screen w-full overflow-hidden">
       {/* Background Video */}
       <video
         autoPlay
@@ -20,7 +20,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
-        <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
+        <h1 className="max-w-4xl text-3xl sm:text-4xl md:text-6xl font-bold leading-tight md:text-6xl">
           Building Digital Products <br className="hidden md:block" />
           That Power{" "}
           <span className="text-green-500">Growth</span>
@@ -34,17 +34,18 @@ const Hero = () => {
         <div className="mt-6 flex flex-col sm:flex-row gap-4">
           <Link
             to="/hire-talent"
-            className="rounded-full bg-white text-black px-6 py-3 text-sm font-medium text-center hover:bg-white/90 transition"
-          >
+            className="w-full sm:w-auto rounded-full bg-white text-black px-6 py-3 text-sm font-medium text-center hover:bg-white/90 transition"
+            >
             Start Your Project
-          </Link>
+            </Link>
 
-          <Link
+            <Link
             to="/hire-talent"
-            className="rounded-full border border-white/40 text-white px-6 py-3 text-sm font-medium text-center hover:bg-white/10 transition"
-          >
+            className="w-full sm:w-auto rounded-full border border-white/40 text-white px-6 py-3 text-sm font-medium text-center hover:bg-white/10 transition"
+            >
             Hire Talent
-          </Link>
+            </Link>
+
         </div>
       </div>
     </section>

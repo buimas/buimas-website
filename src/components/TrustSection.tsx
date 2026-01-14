@@ -2,7 +2,7 @@ import trustImage from "../assets/images/trust-image.png"
 
 const TrustSection = () => {
   return (
-    <section className="w-full mt-20 px-6 md:px-10 lg:px-[100px]">
+    <section className="w-full mt-12 md:mt-20 px-6 md:px-10 lg:px-[100px]">
         <div
           className="
             flex flex-col md:flex-row
@@ -20,7 +20,7 @@ const TrustSection = () => {
         <img
           src={trustImage}
           alt="Transparency illustration"
-          className="h-16 w-16 object-contain"
+          className="h-12 w-12 md:h-16 md:w-16 object-contain"
         />
 
         {/* Right text */}
