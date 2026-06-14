@@ -12,7 +12,7 @@ const projects: Project[] = [
   {
     name: "Mowo Africa",
     category: "Mobile App",
-    description: "One line on what Mowo Africa is and what you built — replace with the real pitch.",
+    description: "Discover amazing products, support local businesses, and earn commissions every time you shop.",
     image: mowoImg,
     href: "https://apps.apple.com/ng/app/mowo-africa/id6746742816",
     fit: "contain",
@@ -20,21 +20,21 @@ const projects: Project[] = [
   {
     name: "Ninthgrid",
     category: "Web Platform",
-    description: "One line on what Ninthgrid is — replace with the real pitch.",
+    description: "Improve your brand’s storytelling with unique Afrocentric stock images and illustrations to reach a diverse audience.",
     image: ninthgridWeb,
     href: "https://ninthgrid.com",
   },
   {
     name: "Oshodi Food",
     category: "Web Platform",
-    description: "One line on what Oshodi Food is — replace with the real pitch.",
+    description: "Deliver delicious meals to your doorstep with Oshodi Food — your go-to destination for authentic African cuisine.",
     image: oshodifoodWeb,
     href: "https://oshodifood.com",
   },
   {
     name: "CyclexAfrica",
     category: "Web Platform",
-    description: "One line on what CyclexAfrica is — replace with the real pitch.",
+    description: "Cyclex the future of sustainable waste management in Africa, creating a greener, cleaner future where recycling and sustainability are prioritized.",
     image: cyclexWeb,
     href: "https://cyclexafrica.com/",
   },
