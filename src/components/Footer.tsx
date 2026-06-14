@@ -7,73 +7,48 @@ import linkedinIcon from "../assets/images/linkedin.png"
 import xIcon from "../assets/images/x.png"
 
 const socials = [
-  {
-    name: "WhatsApp",
-    href: "https://wa.me/2349068563605",
-    icon: whatsappIcon,
-  },
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/buimas.agency",
-    icon: instagramIcon,
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/company/buimas",
-    icon: linkedinIcon,
-  },
-  {
-    name: "X",
-    href: "https://x.com/buimas_agency",
-    icon: xIcon,
-  },
+  { name: "WhatsApp", href: "https://wa.me/2349068563605", icon: whatsappIcon },
+  { name: "Instagram", href: "https://www.instagram.com/buimas.agency", icon: instagramIcon },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/buimas", icon: linkedinIcon },
+  { name: "X", href: "https://x.com/buimas_agency", icon: xIcon },
+]
+
+const quickLinks = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/hire-talent", label: "Hire Talent" },
 ]
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-neutral-900 text-white">
-      {/* TOP SECTION */}
-      <div className="px-6 md:px-10 lg:px-[100px] py-24">
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-3">
-          
-          {/* BRAND */}
+    <footer className="w-full bg-ink-950 text-white">
+      <div className="px-6 md:px-10 lg:px-[100px] py-20">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-3 lg:gap-16">
+          {/* Brand */}
           <div>
             <img src={logo} alt="Buimas logo" className="h-8 w-auto" />
-
-            <p className="mt-6 max-w-sm text-white/70">
-              Your trusted partner for custom software development,
-              technical talent, and strategic consulting.
+            <p className="mt-6 max-w-sm text-ink-400">
+              Your trusted partner for custom software development, technical talent, and strategic consulting.
             </p>
-
-            <p className="mt-6 text-white/70">
-              Open: Mon – Fri
-            </p>
+            <p className="mt-6 text-sm text-ink-500">Open Monday – Friday</p>
           </div>
 
-          {/* CONTACT */}
+          {/* Contact */}
           <div>
-            <h4 className="text-lg font-semibold">
-              Contact Us
-            </h4>
-
-            <div className="mt-6 space-y-4 text-white/70">
-              <a
-                href="mailto:info@buimas.com"
-                className="block hover:text-white transition"
-              >
+            <h4 className="text-sm font-medium uppercase tracking-wider text-ink-400">Contact</h4>
+            <div className="mt-6 space-y-3 text-ink-300">
+              <a href="mailto:info@buimas.com" className="block transition hover:text-white">
                 info@buimas.com
               </a>
-
-              <a
-                href="tel:+2349068563605"
-                className="block hover:text-white transition"
-              >
-                +2349068563605, +2349167674015
+              <a href="tel:+2349068563605" className="block transition hover:text-white">
+                +234 906 856 3605
+              </a>
+              <a href="tel:+2349167674015" className="block transition hover:text-white">
+                +234 916 767 4015
               </a>
             </div>
 
-            {/* SOCIAL ICONS */}
-            <div className="mt-8 flex items-center gap-6">
+            <div className="mt-6 flex items-center gap-3">
               {socials.map((social) => (
                 <a
                   key={social.name}
@@ -81,59 +56,38 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="transition hover:opacity-70"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition hover:border-white/30 hover:bg-white/5"
                 >
-                  <img
-                    src={social.icon}
-                    alt={social.name}
-                    className="h-9 w-9 md:h-10 md:w-10"
-                  />
+                  <img src={social.icon} alt="" className="h-5 w-5" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* QUICK LINKS */}
+          {/* Quick links */}
           <div>
-            <h4 className="text-lg font-semibold">
-              QuickLinks
-            </h4>
-
-            <ul className="mt-6 space-y-4 text-white/70">
-              <li>
-                <Link to="/about" className="hover:text-white transition">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/hire-talent" className="hover:text-white transition">
-                  Start Your Project
-                </Link>
-              </li>
-              <li>
-                <Link to="/hire-talent" className="hover:text-white transition">
-                  Hire Talent
-                </Link>
-              </li>
+            <h4 className="text-sm font-medium uppercase tracking-wider text-ink-400">Quick Links</h4>
+            <ul className="mt-6 space-y-3 text-ink-300">
+              {quickLinks.map((link) => (
+                <li key={link.to}>
+                  <Link to={link.to} className="transition hover:text-white">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-
         </div>
       </div>
 
-      {/* DIVIDER */}
-      <div className="border-t border-white/20" />
-
-      {/* BOTTOM BAR */}
-      <div className="px-6 md:px-10 lg:px-[100px] py-6">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-sm text-white/60">
-          <span>
-            Privacy Policy
-          </span>
-
-          <span>
-            © 2026 Buimas Solutions. All Rights Reserved
-          </span>
+      <div className="border-t border-white/10">
+        <div className="px-6 md:px-10 lg:px-[100px] py-6">
+          <div className="flex flex-col gap-3 text-sm text-ink-500 md:flex-row md:items-center md:justify-between">
+            <span>© {new Date().getFullYear()} Buimas Solutions. All rights reserved.</span>
+            <Link to="/privacy" className="transition hover:text-white">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

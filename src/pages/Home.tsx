@@ -1,16 +1,20 @@
 import Hero from "../components/Hero"
-import TrustSection from "../components/TrustSection"
-import ProcessSection from "../components/ProcessSection"
 import CoreExpertiseSection from "../components/CoreExpertiseSection"
+import ProcessSection from "../components/ProcessSection"
+import FeaturedWork from "../components/FeaturedWork"
+import Testimonials from "../components/Testimonials"
+import FAQ from "../components/FAQ"
 import ContactSection from "../components/ContactSection"
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <TrustSection />
-      <ProcessSection />
       <CoreExpertiseSection />
+      <ProcessSection />
+      <FeaturedWork />
+      <Testimonials />
+      <FAQ />
       <ContactSection />
     </>
   )

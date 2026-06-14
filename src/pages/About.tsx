@@ -1,3 +1,7 @@
+import Reveal from "../components/Reveal"
+import ProjectCard from "../components/ProjectCard"
+import type { Project } from "../components/ProjectCard"
+
 import htmlIcon from "../assets/images/html.svg"
 import cssIcon from "../assets/images/css.svg"
 import jsIcon from "../assets/images/javascript.svg"
@@ -9,6 +13,7 @@ import javaIcon from "../assets/images/java.svg"
 import csharpIcon from "../assets/images/csharp.svg"
 import pythonIcon from "../assets/images/python.svg"
 import figmaIcon from "../assets/images/figma.svg"
+
 import getstacImg from "../assets/images/getstac.png"
 import spikkImg from "../assets/images/spikk.png"
 import mowoImg from "../assets/images/mowo.png"
@@ -21,8 +26,6 @@ import mowoWeb from "../assets/images/mowoafrica.png"
 import babysittingWeb from "../assets/images/babysittingbuddies.png"
 import persziWeb from "../assets/images/perzsi.png"
 import cyclexWeb from "../assets/images/cyclexafrica.png"
-
-
 
 const skills = [
   { name: "HTML", icon: htmlIcon },
@@ -44,289 +47,118 @@ const roles = [
   "DevOps Engineer",
   "AI/ML Engineer",
   "QA Engineer",
-  "Cyber Security Experts",
+  "Cyber Security Expert",
   "UI/UX Designer",
   "Data Scientist",
-  "Product Managers",
+  "Product Manager",
+]
+
+const mobileProjects: Project[] = [
+  { name: "Mowo Africa", category: "Mobile App", image: mowoImg, href: "https://apps.apple.com/ng/app/mowo-africa/id6746742816", fit: "contain" },
+  { name: "Getstac", category: "Mobile App", image: getstacImg, href: "https://play.google.com/store/apps/details?id=com.getstac.getstac_beta&hl=en", fit: "contain" },
+  { name: "Spikk", category: "Mobile App", image: spikkImg, href: "https://play.google.com/store/apps/details?id=com.spikk&hl=en", fit: "contain" },
+  { name: "CyclexAfrica", category: "Mobile App", image: cyclexImg, href: "https://play.google.com/store/apps/details?id=com.cyclex.mobile&hl=en",fit: "contain" },
+]
+
+const webProjects: Project[] = [
+  { name: "Spikk", category: "Web Platform", image: spikkWeb, href: "https://spikk.co" },
+  { name: "Ninthgrid", category: "Web Platform", image: ninthgridWeb, href: "https://ninthgrid.com" },
+  { name: "Oshodi Food", category: "Web Platform", image: oshodifoodWeb, href: "https://oshodifood.com" },
+  { name: "Glod", category: "Web Platform", image: glodWeb, href: "https://glod.io" },
+  { name: "Mowo Africa", category: "Web Platform", image: mowoWeb, href: "https://mowoafrica.com" },
+  { name: "Babysitting Buddies", category: "Web Platform", image: babysittingWeb, href: "https://babysittingbuddiesci.com" },
+  { name: "Perszi", category: "Web Platform", image: persziWeb, href: "https://perszi.com" },
+  { name: "CyclexAfrica", category: "Web Platform", image: cyclexWeb, href: "https://cyclexafrica.com" },
 ]
 
 const About = () => {
   return (
     <main className="w-full">
-      <section className="w-full py-24">
-  <div className="pt-36 md:px-10 lg:px-[100px]">
-    <div
-      className="
-        rounded-2xl
-        bg-white/70
-        backdrop-blur-xl
-        shadow-lg
-      "
-    >
-      <div className="p-10 ">
-        <h1 className="text-3xl md:text-4xl font-semibold text-neutral-900">
-          About Us
-        </h1>
+      {/* Intro */}
+      <section className="w-full bg-white px-6 md:px-10 lg:px-[100px] pt-36 pb-24">
+        <Reveal>
+          <div className="max-w-3xl">
+            <p className="text-sm font-medium uppercase tracking-wider text-ink-400">About Buimas</p>
+            <h1 className="mt-3 text-4xl font-semibold text-ink-900 md:text-5xl">We build the software behind growing businesses</h1>
+            <p className="mt-6 text-lg leading-relaxed text-ink-500">
+              Buimas is a global software development agency providing on-demand teams of engineers and tech professionals to build custom, high-performing solutions. Our mission is to help businesses innovate and scale through technology — with flexible, scalable, and cost-efficient delivery.
+            </p>
+          </div>
+        </Reveal>
+      </section>
 
-        <p className="mt-6 text-base md:text-lg leading-relaxed text-neutral-500">
-          Buimas is a global software development agency that provides on-demand
-          teams of developers and other tech professionals to build custom,
-          high-performing solutions tailored to client visions. Our mission is
-          to empower businesses to innovate and scale through technology,
-          offering flexible, scalable, and cost-efficient development models.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+      {/* Skills */}
+      <section className="w-full bg-ink-50 px-6 md:px-10 lg:px-[100px] py-24">
+        <Reveal>
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium uppercase tracking-wider text-ink-400">Our toolkit</p>
+            <h2 className="mt-3 text-3xl font-semibold text-ink-900 md:text-4xl">Skills & Technologies</h2>
+          </div>
+        </Reveal>
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+          {skills.map((skill, index) => (
+            <Reveal key={skill.name} delay={index * 0.05}>
+              <div className="group flex h-full flex-col items-center justify-center gap-4 rounded-xl border border-ink-100 bg-white p-6 transition duration-300 hover:border-ink-900 hover:bg-ink-950">
+                <img src={skill.icon} alt="" className="h-10 w-10" />
+                <span className="text-sm font-medium text-ink-800 transition duration-300 group-hover:text-white">{skill.name}</span>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
 
-<section className="w-full py-24">
-  <div className="px-6 md:px-10 lg:px-[100px]">
-    <h2 className="text-2xl md:text-3xl font-semibold text-neutral-900">
-      Skills & Technologies
-    </h2>
+      {/* Roles */}
+      <section className="w-full bg-white px-6 md:px-10 lg:px-[100px] py-24">
+        <Reveal>
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium uppercase tracking-wider text-ink-400">Talent on demand</p>
+            <h2 className="mt-3 text-3xl font-semibold text-ink-900 md:text-4xl">Roles we provide</h2>
+            <p className="mt-4 text-ink-500">Embed senior, vetted specialists into your team across the full product lifecycle.</p>
+          </div>
+        </Reveal>
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {roles.map((role, index) => (
+            <Reveal key={role} delay={index * 0.05}>
+              <div className="rounded-xl border border-ink-200 bg-white px-6 py-5 text-center font-medium text-ink-900 transition duration-300 hover:border-ink-900 hover:shadow-sm">
+                {role}
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
 
-    <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-      {skills.map((skill) => (
-        <div
-  key={skill.name}
-  className="
-    group
-    flex flex-col items-center justify-center
-    rounded-xl
-    bg-neutral-50
-    p-6
-    transition
-    duration-300
-    hover:bg-neutral-900
-  "
->
-  <img
-    src={skill.icon}
-    alt={skill.name}
-    className="h-12 w-12"
-  />
+      {/* Work */}
+      <section className="w-full bg-ink-950 px-6 md:px-10 lg:px-[100px] py-24 md:py-32">
+        <Reveal>
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium uppercase tracking-wider text-ink-400">Our work</p>
+            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">Products we've shipped</h2>
+            <p className="mt-4 text-ink-300">A selection of mobile and web products we've designed, built, and launched.</p>
+          </div>
+        </Reveal>
 
-  <span
-    className="
-      mt-4
-      text-sm
-      font-medium
-      text-neutral-800
-      transition
-      duration-300
-      group-hover:text-white
-    "
-  >
-    {skill.name}
-  </span>
-</div>
+        <Reveal>
+          <h3 className="mt-16 text-sm font-medium uppercase tracking-wider text-ink-400">Mobile apps</h3>
+        </Reveal>
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {mobileProjects.map((project, index) => (
+            <Reveal key={project.name} delay={index * 0.05}>
+              <ProjectCard project={project} />
+            </Reveal>
+          ))}
+        </div>
 
-      ))}
-    </div>
-  </div>
-</section>
-
-        <section className="w-full pt-4 py-24">
-            <div className="px-6 md:px-10 lg:px-[100px]">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {roles.map((role) => (
-                    <div
-                    key={role}
-                    className="
-                        relative
-                        flex items-center justify-center
-                        rounded-xl
-                        bg-neutral-100
-                        px-8 py-6
-                        text-center
-                        text-base font-medium text-neutral-800
-                        shadow-sm
-                        transition
-                        duration-300
-                        hover:bg-neutral-900
-                        hover:text-white
-                    "
-                style={{
-                clipPath:
-                 "polygon(4% 0%, 96% 0%, 100% 50%, 96% 100%, 4% 100%, 0% 50%)",
-                 }}
-                >
-                    {role}
-                    </div>
-                ))}
-                </div>
-            </div>
-        </section>
-
-        <section className="w-full bg-neutral-200 py-24">
-  <div className="px-6 md:px-10 lg:px-[100px]">
-    <h2 className="text-2xl md:text-3xl font-semibold text-black">
-      Our Projects
-    </h2>
-
-    <p className="mt-2 text-black/70">
-      Mobile App Projects (Available on Appstore and Playstore)
-    </p>
-
-    <div className="mt-8">
-  {/* Getstac */}
-  <div className="space-y-4 mb-16">
-    <h4 className="text-2xl font-semibold text-black">
-      Getstac
-    </h4>
-    <img
-      src={getstacImg}
-      alt="Getstac mobile app project"
-      className="w-full rounded-2xl"
-    />
-  </div>
-
-  {/* Spikk */}
-  <div className="space-y-4 mb-16">
-    <h4 className="text-2xl font-semibold text-black">
-      Spikk
-    </h4>
-    <img
-      src={spikkImg}
-      alt="Spikk mobile app project"
-      className="w-full rounded-2xl"
-    />
-  </div>
-
-  {/* Mowo */}
-  <div className="space-y-4 mb-16">
-    <h4 className="text-2xl font-semibold text-black">
-      Mowo
-    </h4>
-    <img
-      src={mowoImg}
-      alt="Mowo mobile app project"
-      className="w-full rounded-2xl"
-    />
-  </div>
-
-  {/* CyclexAfrica */}
-  <div className="space-y-4">
-    <h4 className="text-2xl font-semibold text-black">
-      CyclexAfrica
-    </h4>
-    <img
-      src={cyclexImg}
-      alt="CyclexAfrica mobile app project"
-      className="w-full rounded-2xl"
-    />
-  </div>
-</div>
-  </div>
-</section>
-
-<section className="w-full bg-neutral-300 py-24">
-  <div className="px-6 md:px-10 lg:px-[100px]">
-    <h2 className="text-2xl md:text-3xl font-semibold text-black">
-      Web Projects (Live)
-    </h2>
-
-    <div className="mt-10">
-      {/* Spikk */}
-      <div className="space-y-4 mb-16">
-        <h4 className="text-xl font-semibold text-black">
-          Spikk.co
-        </h4>
-        <img
-          src={spikkWeb}
-          alt="Spikk website"
-          className="w-full rounded-2xl"
-        />
-      </div>
-
-      {/* Ninthgrid */}
-      <div className="space-y-4 mb-16">
-        <h4 className="text-xl font-semibold text-black">
-          Ninthgrid.com
-        </h4>
-        <img
-          src={ninthgridWeb}
-          alt="Ninthgrid website"
-          className="w-full rounded-2xl"
-        />
-      </div>
-
-      {/* Oshodifood */}
-      <div className="space-y-4 mb-16">
-        <h4 className="text-xl font-semibold text-black">
-          Oshodifood.com
-        </h4>
-        <img
-          src={oshodifoodWeb}
-          alt="Oshodifood website"
-          className="w-full rounded-2xl"
-        />
-      </div>
-
-      {/* Glod */}
-      <div className="space-y-4 mb-16">
-        <h4 className="text-xl font-semibold text-black">
-          Glod.io
-        </h4>
-        <img
-          src={glodWeb}
-          alt="Glod website"
-          className="w-full rounded-2xl"
-        />
-      </div>
-
-      {/* Mowo Africa */}
-      <div className="space-y-4 mb-16">
-        <h4 className="text-xl font-semibold text-black">
-          Mowoafrica.com
-        </h4>
-        <img
-          src={mowoWeb}
-          alt="Mowo Africa website"
-          className="w-full rounded-2xl"
-        />
-      </div>
-
-      {/* Babysitting Buddies */}
-      <div className="space-y-4 mb-16">
-        <h4 className="text-xl font-semibold text-black">
-          babysittingbuddiesci.com
-        </h4>
-        <img
-          src={babysittingWeb}
-          alt="Babysitting Buddies website"
-          className="w-full rounded-2xl"
-        />
-      </div>
-
-      {/* Perszi */}
-      <div className="space-y-4 mb-16">
-        <h4 className="text-xl font-semibold text-black">
-          perszi.com
-        </h4>
-        <img
-          src={persziWeb}
-          alt="Perszi website"
-          className="w-full rounded-2xl"
-        />
-      </div>
-
-      {/* CyclexAfrica */}
-      <div className="space-y-4">
-        <h4 className="text-xl font-semibold text-black">
-          Cyclexafrica.com
-        </h4>
-        <img
-          src={cyclexWeb}
-          alt="CyclexAfrica website"
-          className="w-full rounded-2xl"
-        />
-      </div>
-    </div>
-  </div>
-</section>
-
+        <Reveal>
+          <h3 className="mt-16 text-sm font-medium uppercase tracking-wider text-ink-400">Web platforms</h3>
+        </Reveal>
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {webProjects.map((project, index) => (
+            <Reveal key={`${project.name}-web`} delay={index * 0.05}>
+              <ProjectCard project={project} />
+            </Reveal>
+          ))}
+        </div>
+      </section>
     </main>
   )
 }
