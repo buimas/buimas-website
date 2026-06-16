@@ -1,16 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
+import { Toaster } from "react-hot-toast"
 import ScrollToTop from "./components/ScrollToTop"
 import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 import Home from "./pages/Home"
 import About from "./pages/About"
-import Footer from "./components/Footer"
 import HireTalent from "./components/HireTalent"
 import Privacy from "./pages/Privacy"
 import NotFound from "./pages/NotFound"
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
+    <>
+      <Toaster position="top-right" />
       <ScrollToTop />
       <Navbar />
       <Routes>
@@ -21,7 +23,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </>
   )
 }
 

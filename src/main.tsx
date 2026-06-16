@@ -1,14 +1,21 @@
 import React from "react"
-import ReactDOM from "react-dom/client"
+import { createRoot, hydrateRoot } from "react-dom/client"
+import { BrowserRouter } from "react-router-dom"
 import App from "./App"
 import "./index.css"
-import { Toaster } from "react-hot-toast"
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const root = document.getElementById("root")!
+
+const app = (
   <React.StrictMode>
-    <>
-      <Toaster position="top-right" />
+    <BrowserRouter>
       <App />
-    </>
+    </BrowserRouter>
   </React.StrictMode>
 )
+
+if (root.childElementCount === 0) {
+  createRoot(root).render(app)
+} else {
+  hydrateRoot(root, app)
+}
