@@ -14,6 +14,8 @@ const app = (
   </React.StrictMode>
 )
 
+// In production the root already contains prerendered HTML, so we hydrate it.
+// In `npm run dev` the root is empty, so we render fresh.
 if (root.childElementCount === 0) {
   createRoot(root).render(app)
 } else {
