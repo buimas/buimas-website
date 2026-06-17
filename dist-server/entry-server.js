@@ -760,7 +760,7 @@ const About = () => {
     /* @__PURE__ */ jsx("section", { className: "w-full bg-white px-6 md:px-10 lg:px-[100px] pt-36 pb-24", children: /* @__PURE__ */ jsx(Reveal, { children: /* @__PURE__ */ jsxs("div", { className: "max-w-3xl", children: [
       /* @__PURE__ */ jsx("p", { className: "text-sm font-medium uppercase tracking-wider text-ink-400", children: "About Buimas" }),
       /* @__PURE__ */ jsx("h1", { className: "mt-3 text-4xl font-semibold text-ink-900 md:text-5xl", children: "We build the software behind growing businesses" }),
-      /* @__PURE__ */ jsx("p", { className: "mt-6 text-lg leading-relaxed text-ink-500", children: "Buimas is a global software development agency providing on-demand teams of engineers and tech professionals to build custom, high-performing solutions. Our mission is to help businesses innovate and scale through technology — with flexible, scalable, and cost-efficient delivery." })
+      /* @__PURE__ */ jsx("p", { className: "mt-6 text-lg leading-relaxed text-ink-500", children: "Buimas is a global software development agency providing on-demand teams of engineers and tech professionals to build custom, high-performing solutions. Our mission is to help businesses innovate and scale through technology, with flexible, scalable, and cost-efficient delivery." })
     ] }) }) }),
     /* @__PURE__ */ jsxs("section", { className: "w-full bg-ink-50 px-6 md:px-10 lg:px-[100px] py-24", children: [
       /* @__PURE__ */ jsx(Reveal, { children: /* @__PURE__ */ jsxs("div", { className: "max-w-2xl", children: [
