@@ -1,6 +1,14 @@
+import { Helmet } from "react-helmet-async"
+
 const Privacy = () => {
   return (
     <main className="w-full bg-white px-6 md:px-10 lg:px-[100px] pt-36 pb-24">
+      <Helmet>
+        <title>Privacy Policy</title>
+        <meta name="description" content="How Buimas collects, uses, and protects your information." />
+        <meta property="og:url" content="https://www.buimas.com/privacy" />
+        <link rel="canonical" href="https://www.buimas.com/privacy" />
+      </Helmet>
       <div className="mx-auto max-w-3xl">
         <p className="text-sm font-medium uppercase tracking-wider text-ink-400">Legal</p>
         <h1 className="mt-3 text-4xl font-semibold text-ink-900 md:text-5xl">Privacy Policy</h1>

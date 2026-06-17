@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async"
 import Reveal from "../components/Reveal"
 import ProjectCard from "../components/ProjectCard"
 import type { Project } from "../components/ProjectCard"
@@ -74,6 +75,14 @@ const webProjects: Project[] = [
 const About = () => {
   return (
     <main className="w-full">
+      <Helmet>
+        <title>About</title>
+        <meta name="description" content="Learn about Buimas — the team designing, building, and scaling reliable software products and providing senior engineering talent." />
+        <meta property="og:title" content="About Buimas" />
+        <meta property="og:description" content="The team designing, building, and scaling reliable software products and providing senior engineering talent." />
+        <meta property="og:url" content="https://www.buimas.com/about" />
+        <link rel="canonical" href="https://www.buimas.com/about" />
+      </Helmet>
       {/* Intro */}
       <section className="w-full bg-white px-6 md:px-10 lg:px-[100px] pt-36 pb-24">
         <Reveal>
