@@ -2,6 +2,10 @@ import { useState } from "react"
 import type { FormEvent } from "react"
 import toast from "react-hot-toast"
 
+// Web3Forms access key — safe to expose in client-side code.
+// Get yours free at https://web3forms.com (sign up with the company email).
+const WEB3FORMS_ACCESS_KEY = "137b29f6-6914-44a8-906c-6982034f74cb"
+
 const topics = ["Hire Engineers", "Product Development", "Technical Consulting"]
 
 const ConsultationForm = () => {
@@ -11,16 +15,19 @@ const ConsultationForm = () => {
     e.preventDefault()
     const form = e.currentTarget
     const formData = new FormData(form)
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY)
+    formData.append("subject", "New consultation request — Buimas")
 
     setSubmitting(true)
     try {
-      const response = await fetch("https://formspree.io/f/xeeeqwnb", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData,
         headers: { Accept: "application/json" },
       })
+      const data = await response.json()
 
-      if (response.ok) {
+      if (data.success) {
         toast.success("Request sent successfully. We'll get back to you shortly.")
         form.reset()
       } else {
@@ -39,6 +46,9 @@ const ConsultationForm = () => {
       <p className="mt-1 text-sm text-ink-500">We'll reply with next steps and a calendar invite.</p>
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-5">
+        {/* Honeypot — hidden from real users, catches bots */}
+        <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
             <label htmlFor="firstName" className="text-sm text-ink-700">First name</label>
